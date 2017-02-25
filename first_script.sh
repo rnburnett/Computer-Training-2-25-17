@@ -1,3 +1,7 @@
-head -5 $1 | sort > animalsfirst5.txt
-wc -c animalsfirst5.txt > $2
-rm animalsfirst5.txt
+if [ "$1" == "-h" ]; then
+	echo "Usage: sh $0 input_file output_file"
+	exit
+fi
+
+#This is the script we used in the computer training
+head -5 $1 | sort | wc -c > $2
